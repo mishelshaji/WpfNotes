@@ -1,0 +1,17 @@
+﻿<Window x:Class="PagesAndFrames.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PagesAndFrames"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Button x:Name="BtnNavigate" Height="40" 
+                Width="90" DockPanel.Dock="Top"
+                Click="BtnNavigate_OnClick">Navigate</Button>
+        
+        <Frame x:Name="MyFrame" Source="Pages/Page1.xaml"
+               NavigationUIVisibility="Hidden"></Frame>
+    </DockPanel>
+</Window>

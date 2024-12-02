@@ -1,0 +1,15 @@
+﻿<Page x:Class="PagesAndFrames.Pages.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PagesAndFrames.Pages"
+      mc:Ignorable="d"
+      Title="Page2" Height="450" Width="800">
+    <DockPanel Background="Bisque" d:Background="White">
+        
+        <Button x:Name="BtnBack" DockPanel.Dock="Top"
+                Click="BtnBack_OnClick">Go Back</Button>
+        <TextBlock FontSize="30">Page 2</TextBlock>
+    </DockPanel>
+</Page>

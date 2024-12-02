@@ -1,0 +1,14 @@
+﻿<Window x:Class="ViewModelBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ViewModelBinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock Text="{Binding Time}"></TextBlock>
+        <TextBlock Text="{Binding Seconds}"></TextBlock>
+        <Button x:Name="BtnUpdate" Click="BtnUpdate_OnClick">Click to update</Button>
+    </StackPanel>
+</Window>
