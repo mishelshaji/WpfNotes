@@ -1,0 +1,31 @@
+﻿<Window x:Class="SimpleFiltering.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleFiltering"
+        xmlns:vm="clr-namespace:SimpleFiltering.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel></vm:MainWindowViewModel>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Key="F" Modifiers="Control" Command="{Binding SearchCommand}"></KeyBinding>
+    </Window.InputBindings>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Background="Bisque">
+            <TextBlock TextAlignment="Center" FontSize="26">Search</TextBlock>
+            <Separator></Separator>
+            <TextBox Text="{Binding Search}"></TextBox>
+            <Button Margin="0,10" Command="{Binding SearchCommand}">Search</Button>
+        </StackPanel>
+        
+        <ListView Grid.Column="1" ItemsSource="{Binding Names}"></ListView>
+    </Grid>
+</Window>
