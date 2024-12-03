@@ -8,9 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ShapeRender.ViewModels;
 
-namespace ShapeRender;
+namespace MultiBinding;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml
