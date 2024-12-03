@@ -1,0 +1,100 @@
+﻿<Window x:Class="AdvancedFiltering.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvancedFiltering"
+        xmlns:vm="clr-namespace:AdvancedFiltering.ViewModels"
+        xmlns:c="clr-namespace:AdvancedFiltering.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel></vm:MainWindowViewModel>
+    </Window.DataContext>
+    <Window.Resources>
+        <c:StringFormatConverter x:Key="StringFormatConverter"></c:StringFormatConverter>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Border Background="LightGray" Padding="10">
+            <StackPanel>
+                <TextBlock FontSize="26" FontWeight="Bold">Filters</TextBlock>
+                <Separator Margin="0,5"></Separator>
+                
+                <Border CornerRadius="5" Background="White" Padding="10">
+                    <StackPanel>
+                        <TextBlock>Name</TextBlock>
+                        <TextBox Text="{Binding NameFilter}"></TextBox>
+
+                        <TextBlock 
+                            Margin="0,10,0,0"
+                            Text="{Binding MinPriceRangeFilter, 
+                            Converter={StaticResource StringFormatConverter}, 
+                            ConverterParameter=Min Price: {0}}">
+                        </TextBlock>
+                        <Slider 
+                            x:Name="SliderMinimumPrice"
+                            Minimum="0" 
+                            Maximum="5000" 
+                            Value="{Binding MinPriceRangeFilter}"></Slider>
+                        
+                        <TextBlock 
+                            Margin="0,10,0,0"
+                            Text="{Binding MaxPriceRangeFilter, 
+                            Converter={StaticResource StringFormatConverter}, 
+                            ConverterParameter=Max Price: {0}}">
+                        </TextBlock>
+                        <Slider 
+                            Minimum="{Binding ElementName=SliderMinimumPrice, Path=Value, Mode=OneWay}" 
+                            Maximum="50000" 
+                            Value="{Binding MaxPriceRangeFilter}"></Slider>
+                        
+                        <CheckBox 
+                            Margin="0,10,0,0"
+                            Content="Hide Out of Stock" 
+                            IsChecked="{Binding HideOutOfStockItems}"></CheckBox>
+                        
+                        <StackPanel 
+                            Margin="0,5"
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Right">
+                            <Button 
+                                Margin="5,0"
+                                Style="{StaticResource DangerButton}" 
+                                Command="{Binding ClearFilterCommand}">Clear</Button>
+                            <Button 
+                                Style="{StaticResource SuccessButton}"
+                                Command="{Binding ApplyFilterCommand}">Apply</Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Column="1" Padding="10">
+            <ListView ItemsSource="{Binding ProductsToDisplay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image 
+                                Source="https://picsum.photos/500"
+                                Stretch="Fill"
+                                Height="50"
+                                Width="50"></Image>
+                            <StackPanel Margin="10, 0">
+                                <TextBlock FontWeight="Bold"
+                                           FontSize="20"
+                                           Text="{Binding Name}"></TextBlock>
+                                <TextBlock Text="{Binding ShortDescription}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+    </Grid>
+</Window>
