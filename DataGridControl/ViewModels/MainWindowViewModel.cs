@@ -38,7 +38,7 @@ public class MainWindowViewModel: INotifyPropertyChanged
         };
         DeleteCommand = new RelayCommands(DeleteCommandHandler, CanDeleteCommandHandler);
     }
-
+    
     private void DeleteCommandHandler()
     {
         var confirm = MessageBox.Show(

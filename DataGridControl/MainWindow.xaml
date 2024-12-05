@@ -24,7 +24,6 @@
             <DataGrid.Columns>
                 <DataGridTextColumn 
                     Header="Id" 
-                    CanUserSort="True"
                     Binding="{Binding Id}"></DataGridTextColumn>
                 
                 <DataGridTextColumn
