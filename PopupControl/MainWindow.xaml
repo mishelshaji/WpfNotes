@@ -1,0 +1,19 @@
+﻿<Window x:Class="PopupControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PopupControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <CheckBox Name="PCheckBox" Content="Checked Me" Width="200" /> 
+        <Popup IsOpen="{Binding ElementName=PCheckBox, Path=IsChecked}"    
+               PlacementTarget="{Binding ElementName=PCheckBox}"
+               AllowsTransparency="True" PopupAnimation="Slide"> 
+			<StackPanel Background="Bisque">
+                <TextBlock>This is a popup box to display some data.</TextBlock>
+            </StackPanel>
+        </Popup> 
+    </StackPanel>
+</Window>
