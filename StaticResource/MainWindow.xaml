@@ -4,12 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StaticResource"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        <sys:String x:Key="StringResource">This is a string.</sys:String>
+        <sys:Boolean x:Key="BooleanResource">True</sys:Boolean>
+        <sys:Double x:Key="DoubleResource">30</sys:Double>
+        <sys:Double x:Key="IntegerResource">100</sys:Double>
         
+        <Brush x:Key="BrushResource">Red</Brush>
+        <SolidColorBrush x:Key="SolidColorBrushResource">Green</SolidColorBrush>
+        
+        <LinearGradientBrush x:Key="LinearGradientBrushResource">
+            <GradientStop Color="Tomato"></GradientStop>
+            <GradientStop Color="Green" Offset="0.8"></GradientStop>
+        </LinearGradientBrush>
+        
+        <x:Array x:Key="ArrayResource" Type="sys:String">
+            <sys:String>Item 1</sys:String>
+            <sys:String>Item 2</sys:String>
+            <sys:String>Item 3</sys:String>
+            <sys:String>Item 4</sys:String>
+            <sys:String>Item 5</sys:String>
+        </x:Array>
     </Window.Resources>
-    <Grid>
+    <StackPanel>
+        <TextBlock 
+            TextAlignment="Center"
+            FontSize="{StaticResource DoubleResource}"
+            Text="{StaticResource StringResource}"
+            Foreground="{StaticResource SolidColorBrushResource}"></TextBlock>
         
-    </Grid>
+        <CheckBox IsChecked="{StaticResource BooleanResource}"
+                  Foreground="{StaticResource BrushResource}"
+                  Content="{StaticResource StringResource}"></CheckBox>
+        
+        <ComboBox ItemsSource="{StaticResource ArrayResource}"></ComboBox>
+        
+        <Rectangle
+            Height="{StaticResource IntegerResource}"
+            Width="{StaticResource IntegerResource}"
+            Fill="{StaticResource LinearGradientBrushResource}"></Rectangle>
+    </StackPanel>
 </Window>
