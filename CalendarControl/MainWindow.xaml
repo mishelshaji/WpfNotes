@@ -1,0 +1,49 @@
+﻿<Window x:Class="CalendarControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalendarControl"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Calendar 
+            x:Name="Calendar"
+            Margin="20" 
+            SelectionMode="MultipleRange"
+            IsTodayHighlighted="False" 
+            DisplayDate="1/1/2001" 
+            DisplayDateEnd = "1/31/2030" 
+            SelectedDatesChanged = "Calendar_OnSelectedDatesChanged"> 
+			
+            <Calendar.BlackoutDates> 
+                <CalendarDateRange Start = "1/2/2015" End = "1/4/2015"/> 
+                <CalendarDateRange Start = "1/9/2015" End = "1/9/2015"/> 
+                <CalendarDateRange Start = "1/16/2015" End = "1/16/2015"/> 
+                <CalendarDateRange Start = "1/23/2015" End = "1/25/2015"/> 
+                <CalendarDateRange Start = "1/30/2015" End = "1/30/2015"/> 
+            </Calendar.BlackoutDates> 
+			
+            <Calendar.SelectedDates> 
+                <sys:DateTime>1/5/2015</sys:DateTime> 
+                <sys:DateTime>1/12/2015</sys:DateTime> 
+                <sys:DateTime>1/14/2015</sys:DateTime> 
+                <sys:DateTime>1/13/2015</sys:DateTime> 
+                <sys:DateTime>1/15/2015</sys:DateTime> 
+                <sys:DateTime>1/27/2015</sys:DateTime> 
+                <sys:DateTime>4/2/2015</sys:DateTime> 
+            </Calendar.SelectedDates> 
+			
+            <Calendar.Background> 
+                <LinearGradientBrush EndPoint = "0.5,1" StartPoint = "0.5,0"> 
+                    <GradientStop Color = "LightGray" Offset = "0" /> 
+                    <GradientStop Color = "DarkGray" Offset = "0.16" /> 
+                    <GradientStop Color = "LightBlue" Offset = "0.16" /> 
+                    <GradientStop Color = "LightYellow" Offset = "1" /> 
+                </LinearGradientBrush> 
+            </Calendar.Background> 
+			
+        </Calendar>
+    </Grid>
+</Window>
