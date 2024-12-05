@@ -1,0 +1,25 @@
+﻿<Window x:Class="MVVMUsingCommunityToolkit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMUsingCommunityToolkit"
+        xmlns:vm="clr-namespace:MVVMUsingCommunityToolkit.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel></vm:MainWindowViewModel>
+    </Window.DataContext>
+    <StackPanel>
+        <Label>Name</Label>
+        <TextBox Text="{Binding Name}"></TextBox>
+        
+        <Label>Email</Label>
+        <TextBox Text="{Binding Email}"></TextBox>
+        
+        <Label>Phone</Label>
+        <TextBox Text="{Binding Phone}"></TextBox>
+        
+        <Button Command="{Binding SaveCommand}">Save</Button>
+    </StackPanel>
+</Window>

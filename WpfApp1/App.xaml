@@ -4,6 +4,25 @@
              xmlns:local="clr-namespace:WpfApp1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <Style x:Key="ButtonBase" TargetType="Button">
+             <Style.Setters>
+                 <Setter Property="Padding" Value="10,5"></Setter>
+                 <Setter Property="BorderThickness" Value="0"></Setter>
+             </Style.Setters>
+         </Style>
+        
+        <Style x:Key="ButtonPrimary" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+            <Style.Setters>
+                <Setter Property="Background" Value="Black"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+            </Style.Setters>
+        </Style>
+        
+        <Style x:Key="ButtonDanger" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+            <Style.Setters>
+                <Setter Property="Background" Value="Red"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>
