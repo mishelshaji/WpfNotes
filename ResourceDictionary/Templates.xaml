@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Sizes.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="ButtonBase" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontMd}"></Setter>
+    </Style>
+    
+    <Style x:Key="ButtonPrimary" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background" Value="DodgerBlue"></Setter>
+    </Style>
+    
+    <Style x:Key="ButtonSuccess" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background" Value="ForestGreen"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+</ResourceDictionary>
