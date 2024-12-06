@@ -1,0 +1,32 @@
+﻿<Window x:Class="KeyframeAnimation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeyframeAnimation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Button Content="Click Me">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Click">
+                            <BeginStoryboard>
+                                <Storyboard TargetProperty="(Button.Background).(SolidColorBrush.Color)">
+                                    <ColorAnimationUsingKeyFrames>
+                                        <LinearColorKeyFrame KeyTime="0:0:1" Value="Red"></LinearColorKeyFrame>
+                                        <LinearColorKeyFrame KeyTime="0:0:5" Value="Blue"></LinearColorKeyFrame>
+                                        <LinearColorKeyFrame KeyTime="0:0:6" Value="Green"></LinearColorKeyFrame>
+                                        <LinearColorKeyFrame KeyTime="0:0:8" Value="Yellow"></LinearColorKeyFrame>
+                                        <LinearColorKeyFrame KeyTime="0:0:10" Value="Teal"></LinearColorKeyFrame>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </StackPanel>
+</Window>
