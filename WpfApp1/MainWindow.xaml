@@ -4,14 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:vm="clr-namespace:WpfApp1.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <UniformGrid Rows="2" Columns="3">
-        <Button Content="Button 1" />
-        <Button Content="Button 2" />
-        <Button Content="Button 3" />
-        <Button Content="Button 4" />
-        <Button Content="Button 5" />
-        <Button Content="Button 6" />
-    </UniformGrid>
+    <Window.DataContext>
+        <vm:MainWindowViewModel></vm:MainWindowViewModel>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0">
+            <Label>Name</Label>
+            <TextBox Text="{Binding Name}"></TextBox>
+            <Label>Email</Label>            
+            <TextBox Text="{Binding Email}"></TextBox>
+            <Label>Phone</Label>
+            <TextBox Text="{Binding Phone}"></TextBox>
+            
+            <Button Command="{Binding SaveCommand}">Save</Button>
+            
+            <Separator></Separator>
+            
+            <Label>Type email or phone to search</Label>
+            <TextBox Text="{Binding Search}"></TextBox>
+            <Button Command="{Binding SearchCommand}">Search</Button>
+        </StackPanel>
+        <Border Grid.Column="1">
+            <DataGrid ItemsSource="{Binding Contacts}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
 </Window>

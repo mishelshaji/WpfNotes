@@ -19,16 +19,5 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        DataContext = this;
-    }
-    
-    private void WindowCommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
-    {
-        MessageBox.Show("Window Handler Executed");
-    }
-
-    private void StackPanelCommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
-    {
-        MessageBox.Show("Stack Panel Command Handler Executed");
     }
 }
