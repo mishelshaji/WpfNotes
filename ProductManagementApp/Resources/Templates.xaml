@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="ButtonBase" TargetType="Button">
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform x:Name="ButtonScaleTransform" ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                        BorderThickness="0" 
+                        CornerRadius="2"
+                        Background="{TemplateBinding Background}"
+                        Margin="{TemplateBinding Margin}"
+                        Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation 
+                            Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleX)" 
+                            From="1" 
+                            To="1.05" 
+                            Duration="0:0:0.2"></DoubleAnimation>
+                        <DoubleAnimation 
+                            Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleY)" 
+                            From="1" 
+                            To="1.05" 
+                            Duration="0:0:0.2"></DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation 
+                            Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleX)" 
+                            From="1.05" 
+                            To="1" 
+                            Duration="0:0:0.2"></DoubleAnimation>
+                        <DoubleAnimation 
+                            Storyboard.TargetProperty="(Button.RenderTransform).(ScaleTransform.ScaleY)" 
+                            From="1.05" 
+                            To="1" 
+                            Duration="0:0:0.2"></DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="ButtonPrimary" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="{StaticResource Accent}"></GradientStop>
+                    <GradientStop Color="{StaticResource AccentLite}" Offset="0.8"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ButtonSecondary" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="{StaticResource Secondary}"></GradientStop>
+                    <GradientStop Color="{StaticResource SecondaryLite}" Offset="0.8"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ButtonDanger" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="{StaticResource Danger}"></GradientStop>
+                    <GradientStop Color="{StaticResource DangerLite}" Offset="0.8"></GradientStop>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="TabItem">
+        <Setter Property="Foreground" Value="{StaticResource PrimarySolidColorBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Background="{StaticResource SecondarySolidColorBrush}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="0" 
+                            CornerRadius="0"
+                            Padding="15,10"
+                            x:Name="Border">
+                        <ContentPresenter ContentSource="Header"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource AccentSolidColorBrush}" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="TextBox">
+        <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontMd}"></Setter>
+    </Style>
+</ResourceDictionary>

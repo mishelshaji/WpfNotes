@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Sizes.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="H1" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource Font3Xl}"></Setter>
+    </Style>
+    
+    <Style x:Key="H2" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource Font2Xl}"></Setter>
+    </Style>
+    
+    <Style x:Key="H3" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontXl}"></Setter>
+    </Style>
+    
+    <Style x:Key="H4" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontLg}"></Setter>
+    </Style>
+    
+    <Style x:Key="H5" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontMd}"></Setter>
+    </Style>
+    
+    <Style x:Key="H6" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Left"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontSm}"></Setter>
+    </Style>
+    
+    <Style x:Key="Paragraph" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{StaticResource FontSm}"></Setter>
+        <Setter Property="FontWeight" Value="Normal"></Setter>
+    </Style>
+</ResourceDictionary>

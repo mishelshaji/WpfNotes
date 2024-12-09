@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="LiteBlack">#333333</Color>
+    <Color x:Key="Accent">#81b29a</Color>
+    <Color x:Key="AccentLite">#aec3b0</Color>
+    <Color x:Key="Primary">#ffffff</Color>
+    <Color x:Key="PrimaryLite">#edf2f4</Color>
+    <Color x:Key="Secondary">#3d405b</Color>
+    <Color x:Key="SecondaryLite">#598392</Color>
+    <Color x:Key="Danger">#d90429</Color>
+    <Color x:Key="DangerLite">#ef233c</Color>
+    
+    <SolidColorBrush x:Key="BlackSolidColorBrush" Color="{StaticResource Black}"></SolidColorBrush>
+    <SolidColorBrush x:Key="LiteBlackSolidColorBrush" Color="{StaticResource LiteBlack}"></SolidColorBrush>
+    <SolidColorBrush x:Key="AccentSolidColorBrush" Color="{StaticResource Accent}"></SolidColorBrush>
+    <SolidColorBrush x:Key="AccentLiteSolidColorBrush" Color="{StaticResource AccentLite}"></SolidColorBrush>
+    <SolidColorBrush x:Key="PrimarySolidColorBrush" Color="{StaticResource Primary}"></SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryLiteSolidColorBrush" Color="{StaticResource PrimaryLite}"></SolidColorBrush>
+    <SolidColorBrush x:Key="SecondarySolidColorBrush" Color="{StaticResource Secondary}"></SolidColorBrush>
+    <SolidColorBrush x:Key="SecondaryLiteSolidColorBrush" Color="{StaticResource SecondaryLite}"></SolidColorBrush>
+    <SolidColorBrush x:Key="DangerSolidColorBrush" Color="{StaticResource Danger}"></SolidColorBrush>
+    <SolidColorBrush x:Key="DangerLiteSolidColorBrush" Color="{StaticResource DangerLite}"></SolidColorBrush>
+</ResourceDictionary>

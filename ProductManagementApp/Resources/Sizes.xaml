@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:Double x:Key="FontSm">12</sys:Double>
+    <sys:Double x:Key="FontMd">16</sys:Double>
+    <sys:Double x:Key="FontLg">18</sys:Double>
+    <sys:Double x:Key="FontXl">20</sys:Double>
+    <sys:Double x:Key="Font2Xl">22</sys:Double>
+    <sys:Double x:Key="Font3Xl">24</sys:Double>
+</ResourceDictionary>

@@ -77,18 +77,6 @@ public class MainWindowViewModel: ViewModelBase
 
     #endregion
 
-    private bool _isLoading;
-
-    public bool IsLoading
-    {
-        get => _isLoading;
-        set
-        {
-            _isLoading = value;
-            OnPropertyChanged();
-        }
-    }
-
     public MainWindowViewModel()
     {
         _repository = new InMemoryProductRepository();
@@ -100,8 +88,6 @@ public class MainWindowViewModel: ViewModelBase
 
     private void ApplyFilterCommandHandler()
     {
-        IsLoading = true;
-        Thread.Sleep(2000);
         var productsQuery = _products.AsQueryable();
         if (!string.IsNullOrEmpty(NameFilter))
         {
@@ -128,8 +114,6 @@ public class MainWindowViewModel: ViewModelBase
         {
             ProductsToDisplay.Add(product);
         }
-
-        IsLoading = false;
     }
     
     private void ClearFilterCommandHandler()
