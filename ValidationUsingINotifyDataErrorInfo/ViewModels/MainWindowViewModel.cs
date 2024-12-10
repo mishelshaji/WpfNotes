@@ -1,11 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
-using System.Windows;
 
-namespace WpfApp1.ViewModels;
+namespace ValidationUsingINotifyDataErrorInfo.ViewModels;
 
 public class MainWindowViewModel: INotifyPropertyChanged, INotifyDataErrorInfo
 {
@@ -32,27 +29,18 @@ public class MainWindowViewModel: INotifyPropertyChanged, INotifyDataErrorInfo
 
     public IEnumerable GetErrors(string? propertyName)
     {
-        // _errors.TryGetValue(propertyName, out var errors);
-        // return errors;
-        if (_errors.ContainsKey(propertyName))
-        {
-            return _errors[propertyName];
-        }
-
-        return null;
+        _errors.TryGetValue(propertyName, out var errors);
+        return errors;
     }
 
-    public bool HasErrors => _errors.Any();
-    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
-
-    private void ValidateProperty([CallerMemberName] string propertyName = null)
+    private void ValidateProperty([CallerMemberName]string propertyName = null)
     {
         var errors = new List<string>();
         if (propertyName == nameof(Name))
         {
             if (string.IsNullOrWhiteSpace(Name))
             {
-                errors.Add("Name should not be empty.");
+                errors.Add("Invalid Name");
             }
         }
 
@@ -64,7 +52,9 @@ public class MainWindowViewModel: INotifyPropertyChanged, INotifyDataErrorInfo
         {
             _errors.Remove(propertyName);
         }
-        
         ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
     }
+
+    public bool HasErrors => _errors.Any();
+    public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
 }
