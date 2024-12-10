@@ -14,5 +14,7 @@
     <StackPanel>
         <Label>Name</Label>
         <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"></TextBox>
+        <Label>Email</Label>
+        <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"></TextBox>
     </StackPanel>
 </Window>
