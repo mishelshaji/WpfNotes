@@ -1,14 +1,16 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+﻿<Window x:Class="BackgroundWorkers.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:BackgroundWorkers"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <Label>Result</Label>
-        <TextBox x:Name="TxtResult"></TextBox>
-        <Button Click="ButtonBase_OnClick">Click Me</Button>
+        <Label>Steps: (Each step takes 1 second)</Label>
+        <TextBox x:Name="TxtSteps" Text="100"></TextBox>
+        <TextBlock x:Name="TxtResult"></TextBlock>
+        <Button Click="ButtonBase_OnClick">Start</Button>
+        <ProgressBar x:Name="TaskProgress" Value="0" Height="20"></ProgressBar>
     </StackPanel>
 </Window>

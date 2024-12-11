@@ -1,13 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfApp1;
 
@@ -16,8 +8,28 @@ namespace WpfApp1;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private BackgroundWorker worker = new BackgroundWorker();
     public MainWindow()
     {
         InitializeComponent();
+        worker.DoWork += WorkerOnDoWork;
+        worker.RunWorkerCompleted += WorkerOnRunWorkerCompleted;
+    }
+
+    private void WorkerOnRunWorkerCompleted(object? sender, RunWorkerCompletedEventArgs e)
+    {
+        var res = (string)e.Result;
+        TxtResult.Text = res;
+    }
+
+    private void WorkerOnDoWork(object? sender, DoWorkEventArgs e)
+    {
+        Thread.Sleep(2000);
+        e.Result = "Done";
+    }
+
+    private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+    {
+        worker.RunWorkerAsync();
     }
 }
