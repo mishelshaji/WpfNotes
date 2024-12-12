@@ -1,16 +1,13 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+﻿<Window x:Class="StarRatingUserControl.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        xmlns:controls="clr-namespace:WpfApp1.Controls"
+        xmlns:local="clr-namespace:StarRatingUserControl"
+        xmlns:controls="clr-namespace:StarRatingUserControl.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-       <controls:Rating x:Name="RatingControl" Value="2"></controls:Rating>
-        <TextBlock 
-            FontSize="30"
-            Text="{Binding Value, ElementName=RatingControl}"></TextBlock>
+        <controls:Rating Va></controls:Rating>
     </StackPanel>
 </Window>
