@@ -1,0 +1,20 @@
+﻿<Window x:Class="PasswordCheckerUserControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordCheckerUserControl"
+        xmlns:controls="clr-namespace:PasswordCheckerUserControl.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <controls:PasswordGroup 
+            x:Name="Passwords"
+            MinimumLength="2"
+            MaximumLength="25"
+            RequireNumbers="True"
+            RequireUpperCase="True"
+            RequireLowerCase="True"></controls:PasswordGroup>
+        <TextBlock Text="{Binding Password, ElementName=Passwords, StringFormat='Password: {0}'}"></TextBlock>
+    </StackPanel>
+</Window>
