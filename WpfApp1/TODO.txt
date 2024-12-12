@@ -1,4 +1,4 @@
-﻿VisualStateManager
-UserControl
+﻿Behavior
+VisualStateManager
 CustomControl
 EventDispatcher

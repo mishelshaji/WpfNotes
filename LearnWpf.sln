@@ -166,6 +166,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControlWithPropertyBind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControlWithDependencyProperties", "UserControlWithDependencyProperties\UserControlWithDependencyProperties.csproj", "{64CA5C74-69B9-42DA-822D-56AC821725A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStatesAndTransition", "VisualStatesAndTransition\VisualStatesAndTransition.csproj", "{83C8E342-0A5B-4228-92F4-3342E3042927}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -452,6 +454,10 @@ Global
 		{64CA5C74-69B9-42DA-822D-56AC821725A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64CA5C74-69B9-42DA-822D-56AC821725A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64CA5C74-69B9-42DA-822D-56AC821725A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C8E342-0A5B-4228-92F4-3342E3042927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C8E342-0A5B-4228-92F4-3342E3042927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C8E342-0A5B-4228-92F4-3342E3042927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C8E342-0A5B-4228-92F4-3342E3042927}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{69B9AC23-1E55-4031-948E-D9B782492825} = {DDAB9D70-9AFC-42D7-BF36-4D826D1B9D87}
@@ -522,5 +528,6 @@ Global
 		{BA1B948A-E811-4CF1-B128-5DA39BDF41B4} = {9231A7F4-2029-4304-AF19-F4F4DA9C1AD9}
 		{93C168B4-B90F-4B23-A3EE-1369CF4D9AAB} = {9231A7F4-2029-4304-AF19-F4F4DA9C1AD9}
 		{64CA5C74-69B9-42DA-822D-56AC821725A3} = {9231A7F4-2029-4304-AF19-F4F4DA9C1AD9}
+		{83C8E342-0A5B-4228-92F4-3342E3042927} = {CF37E806-F02D-4F7E-84BE-025F3277EC8A}
 	EndGlobalSection
 EndGlobal
