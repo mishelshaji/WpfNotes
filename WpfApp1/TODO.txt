@@ -1,4 +1,2 @@
 ﻿Behavior
-VisualStateManager
 CustomControl
-EventDispatcher
