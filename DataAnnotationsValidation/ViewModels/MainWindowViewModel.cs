@@ -29,14 +29,16 @@ public class MainWindowViewModel: INotifyPropertyChanged, IDataErrorInfo
     }
 
     public string Error { get; }
-
+    
     public string this[string columnName]
     {
         get
         {
             var context = new ValidationContext(this) { MemberName = columnName };
             var results = new List<ValidationResult>();
-            var isValid = Validator.TryValidateProperty(Name, context, results);
+            var property = this.GetType().GetProperty(columnName);
+            var propertyValue = property.GetValue(this);
+            var isValid = Validator.TryValidateProperty(propertyValue, context, results);
             return isValid? null : results.First().ErrorMessage;
         }
     }

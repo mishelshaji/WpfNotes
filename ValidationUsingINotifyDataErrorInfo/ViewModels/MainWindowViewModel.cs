@@ -54,7 +54,7 @@ public class MainWindowViewModel: INotifyPropertyChanged, INotifyDataErrorInfo
         if (Name.Length < 3)
             nameValidationErrors.Add("Name too short.");
         if (Name.Length > 25)
-            nameValidationErrors.Add("Name too long.");
+            nameValidationErrors.Add("Name too long.")6543 
         
         if(nameValidationErrors.Any())
             _errors[nameof(Name)] = nameValidationErrors;

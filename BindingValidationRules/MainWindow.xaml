@@ -12,7 +12,7 @@
         <vm:MainWindowViewModel></vm:MainWindowViewModel>
     </Window.DataContext>
     <StackPanel>
-        <Label>How old are you?</Label>
+        <Label>What is your name?</Label>
         <TextBox>
             <TextBox.Text>
                 <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">

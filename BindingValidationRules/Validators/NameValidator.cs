@@ -20,7 +20,7 @@ public class NameValidator: ValidationRule
         {
             return new ValidationResult(false, "Name too long.");
         }
-
+    
         return new ValidationResult(true, null);
     }
 }
